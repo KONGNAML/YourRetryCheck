@@ -1,5 +1,6 @@
 'use client'
 
+import { Analytics } from "@vercel/analytics/react"
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -166,6 +167,7 @@ export default function Home() {
                 <title>Input Card</title>
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
             </head>
+            <Analytics/>
             <main className="flex items-center justify-center min-h-screen bg-neutral-900 overflow-hidden">
                 <section className='bsection'>
                     <span className="custom-span"></span>
