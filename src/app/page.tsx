@@ -160,70 +160,85 @@ export default function Home() {
     const [percentage, setPercent] = useState<any>();
 
     return (
-        <>
-            <main className="flex items-center justify-center min-h-screen bg-neutral-900 overflow-hidden">
-                <section className='bsection'>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                    <span className="custom-span"></span>
-                </section>
-                <div className="bg-yellow-500 p-8 rounded-lg w-96 text-center shadow-2xl">
-                    <div className="mb-6 relative">
-                        {/* 위쪽 아이콘 */}
-                        <button onClick={copyURL}><img
+        <main className="flex items-center justify-center min-h-screen bg-neutral-900 overflow-hidden">
+            <section className="bsection">
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+                <span className="custom-span"></span>
+            </section>
+            <div className="bg-yellow-500 p-6 sm:p-8 rounded-lg w-full max-w-[24rem] text-center shadow-2xl">
+                <div className="mb-6 relative">
+                    {/* 위쪽 아이콘 */}
+                    <button onClick={copyURL}>
+                        <img
                             src="/url.png"
                             alt="url"
                             className="w-6 h-6 absolute top-0 right-0"
                             style={result ? {} : {display: "none"}}
-                        /></button>
-
-                        {/* 아래쪽 아이콘 */}
-                        <img
-                            src="/school.png"
-                            alt="school"
-                            className="w-12 h-12 mx-auto relative"
                         />
-                    </div>
-                    <div className="space-y-4" style={result ? {display: "none"} : {}}>
-                        <input value={max} onChange={(e) => setMax(Number(e.target.value))} type="number"
-                               placeholder="모집 인원"
-                               className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"/>
-                        <input value={lastNumber} onChange={(e) => setLastNumber(Number(e.target.value))} type="number"
-                               placeholder="최종 합격 번호"
-                               className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"/>
-                        <input value={mynumber} onChange={(e) => setMynumber(Number(e.target.value))} type="number"
-                               placeholder="자신의 예비 번호"
-                               className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"/>
-                    </div>
-                    <div className="" style={result ? {} : {display: "none"}}>
-                        <p>예상 합격률 : {percentage}%</p>
-                        <br/>
-                        <p className='whitespace-pre-wrap'>{getText(percentage)}</p>
-                    </div>
-                    <button onClick={() => {
+                    </button>
+
+                    {/* 아래쪽 아이콘 */}
+                    <img
+                        src="/school.png"
+                        alt="school"
+                        className="w-12 h-12 mx-auto relative"
+                    />
+                </div>
+                <div className="space-y-4" style={result ? {display: "none"} : {}}>
+                    <input
+                        value={max}
+                        onChange={(e) => setMax(Number(e.target.value))}
+                        type="number"
+                        placeholder="모집 인원"
+                        className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+                    />
+                    <input
+                        value={lastNumber}
+                        onChange={(e) => setLastNumber(Number(e.target.value))}
+                        type="number"
+                        placeholder="최종 합격 번호"
+                        className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+                    />
+                    <input
+                        value={mynumber}
+                        onChange={(e) => setMynumber(Number(e.target.value))}
+                        type="number"
+                        placeholder="자신의 예비 번호"
+                        className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+                    />
+                </div>
+                <div className="" style={result ? {} : {display: "none"}}>
+                    <p>예상 합격률 : {percentage}%</p>
+                    <br/>
+                    <p className="whitespace-pre-wrap">{getText(percentage)}</p>
+                </div>
+                <button
+                    onClick={() => {
                         if (mynumber && lastNumber && max) {
                             if (mynumber < max || lastNumber < max) {
-                                return alert("예비 번호와 최종 합격 번호는 모집인원과 같거나 커야 합니다")
+                                return alert("예비 번호와 최종 합격 번호는 모집인원과 같거나 커야 합니다");
                             }
-                            const rate = max / lastNumber
-                            setPercent(simulateAdmissions(max, mynumber, rate, 10000))
-                            setResult(!result)
+                            const rate = max / lastNumber;
+                            setPercent(simulateAdmissions(max, mynumber, rate, 10000));
+                            setResult(!result);
                         } else {
-                            return alert('입력란을 모두 채워주세요')
+                            return alert("입력란을 모두 채워주세요");
                         }
-                    }} className="text-neutral-900 bg-neutral-200 rounded-md w-max p-2 mt-6 hover:bg-neutral-300">
-                        <p style={result ? {} : {display: "none"}}>돌아가기</p>
-                        <p style={result ? {display: "none"} : {}}>확인하기</p>
-                    </button>
-                </div>
-            </main>
-        </>
+                    }}
+                    className="text-neutral-900 bg-neutral-200 rounded-md w-max p-2 mt-6 hover:bg-neutral-300"
+                >
+                    <p style={result ? {} : {display: "none"}}>돌아가기</p>
+                    <p style={result ? {display: "none"} : {}}>확인하기</p>
+                </button>
+            </div>
+        </main>
     );
 }
