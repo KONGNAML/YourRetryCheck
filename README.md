@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 유리책 : 대학 입시 예비 번호 합격률 계산기 🎓📊
 
-## Getting Started
+이 프로젝트는 대학 입시에서 **예비 번호**를 받은 학생들이 자신의 **합격률**을 계산할 수 있도록 도와주는 웹 애플리케이션입니다. **입학 정원**, **예비 번호**, **입학률** 등을 입력하면, 해당 조건에서 예상 합격 확률을 계산하여 제공합니다.
 
-First, run the development server:
+![screenshot](https://bucket.singlethread.studio/yourecheck.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 주요 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **합격률 계산:**  
+  예비 번호, 모집 인원, 입학률 등을 기반으로 합격 확률을 계산합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **결과 시각화:**  
+  확률 결과를 퍼센트로 표시하고, 재미있는 메시지도 제공합니다.
 
-## Learn More
+- **사용자 친화적 인터페이스:**  
+  간단하고 직관적인 UI로 누구나 쉽게 사용할 수 있습니다.
 
-To learn more about Next.js, take a look at the following resources:
+- **랜덤 메시지 제공:**  
+  확률에 따라 다양한 격려 메시지를 보여줍니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 배포된 웹사이트
 
-## Deploy on Vercel
+웹사이트는 아래 링크에서 사용할 수 있습니다:  
+**[https://yourecheck.xyz](https://yourecheck.xyz)**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 주요 기술 스택
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **프론트엔드**: Next.js, React, Tailwind CSS
+- **배포**: Vercel
+- **버전 관리**: GitHub
+
+---
+
+## 🖥 사용 방법
+
+1. 웹사이트에 접속합니다.
+2. **모집 인원**, **최종 합격 번호**, **예비 번호**를 입력합니다.
+3. 결과 버튼을 눌러 합격 확률을 확인합니다.
+4. 확률에 따라 재미있는 격려 메시지를 확인하세요!
+
+---
+
+## 📄 라이선스
+
+이 프로젝트는 Apache-2.0 라이선스를 따릅니다. 자세한 내용은 [LICENSE](./LICENSE)를 확인하세요.
+
+---
+
+## 📧 문의
+
+문의 사항이나 제안이 있다면 아래로 연락주세요:
+- **Email:** contact@singlethread.studio
+
+---
