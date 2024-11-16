@@ -150,6 +150,31 @@ const successRate0To30 = [
     "오늘의 경험이 당신을 더 강하게 만들 것입니다! 🌟💪"
 ];
 
+const validateNumber = (value: string) => {
+    // 빈 문자열 허용
+    if (value === '') return true;
+    // 숫자만 허용 (음수 제외)
+    return /^\d+$/.test(value);
+};
+
+const NumberInput = ({ value, onChange, placeholder }: any) => {
+    const handleChange = (e: any) => {
+        const newValue = e.target.value;
+        if (validateNumber(newValue)) {
+            onChange(newValue === '' ? '' : Number(newValue));
+        }
+    };
+
+    return (
+        <input
+            value={value === 0 ? '' : value}
+            onChange={handleChange}
+            type="text"
+            placeholder={placeholder}
+            className="text-neutral-900 w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+        />
+    );
+};
 
 export default function Home() {
 
