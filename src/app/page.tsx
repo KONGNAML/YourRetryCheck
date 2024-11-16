@@ -161,7 +161,6 @@ export default function Home() {
 
     return (
         <>
-            <Analytics/>
             <main className="flex items-center justify-center min-h-screen bg-neutral-900 overflow-hidden">
                 <section className='bsection'>
                     <span className="custom-span"></span>
