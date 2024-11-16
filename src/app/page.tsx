@@ -173,7 +173,7 @@ export default function Home() {
                 <span className="custom-span"></span>
                 <span className="custom-span"></span>
             </section>
-            <div className="bg-yellow-500 p-6 sm:p-8 rounded-lg w-full max-w-[24rem] text-center shadow-2xl">
+            <div className="bg-yellow-500 p-6 sm:p-8 rounded-lg w-full sm:max-w-[24rem] max-w-[18rem] text-center shadow-2xl">
                 <div className="mb-6 relative">
                     {/* 위쪽 아이콘 */}
                     <button onClick={copyURL}>
