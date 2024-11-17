@@ -22,7 +22,7 @@ function simulateAdmissions(모집인원: any, 예비번호: any, 입학률: any
     let success = 0;
 
     for (let i = 0; i < 시도횟수; i++) {
-        let num = 1;
+        let num = 0;
         let totalStudents = 0;
 
         while (totalStudents < 모집인원) {
